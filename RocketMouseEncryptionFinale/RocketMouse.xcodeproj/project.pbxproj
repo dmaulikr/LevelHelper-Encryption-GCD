@@ -197,6 +197,8 @@
 		32FDEA621691ADB5007DD4DD /* laser.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32FDEA5A1691ADB5007DD4DD /* laser.wav */; };
 		32FDEA631691ADB5007DD4DD /* lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 32FDEA5B1691ADB5007DD4DD /* lose.wav */; };
 		32FDEA6A1691B828007DD4DD /* level04.plhs in Resources */ = {isa = PBXBuildFile; fileRef = 32FDEA691691B828007DD4DD /* level04.plhs */; };
+		562CEC171703A2F30057207C /* MenuLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 562CEC161703A2F30057207C /* MenuLayer.mm */; };
+		562CEC1A1703A3230057207C /* HelloWorldLayerWithGCD.mm in Sources */ = {isa = PBXBuildFile; fileRef = 562CEC191703A3230057207C /* HelloWorldLayerWithGCD.mm */; };
 		6ECEB2D216EDFC19003297B7 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 6ECEB2D116EDFC19003297B7 /* Images */; };
 		6ECEB36A16EE17BC003297B7 /* LHMouseJointExt.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEB33516EE17BC003297B7 /* LHMouseJointExt.mm */; };
 		6ECEB36B16EE17BC003297B7 /* NSData+LHAES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECEB33716EE17BC003297B7 /* NSData+LHAES256.m */; };
@@ -610,6 +612,10 @@
 		32FDEA5A1691ADB5007DD4DD /* laser.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laser.wav; sourceTree = "<group>"; };
 		32FDEA5B1691ADB5007DD4DD /* lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lose.wav; sourceTree = "<group>"; };
 		32FDEA691691B828007DD4DD /* level04.plhs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level04.plhs; sourceTree = "<group>"; };
+		562CEC151703A2F30057207C /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuLayer.h; path = ../MenuLayer.h; sourceTree = "<group>"; };
+		562CEC161703A2F30057207C /* MenuLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MenuLayer.mm; path = ../MenuLayer.mm; sourceTree = "<group>"; };
+		562CEC181703A3230057207C /* HelloWorldLayerWithGCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldLayerWithGCD.h; path = ../HelloWorldLayerWithGCD.h; sourceTree = "<group>"; };
+		562CEC191703A3230057207C /* HelloWorldLayerWithGCD.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = HelloWorldLayerWithGCD.mm; path = ../HelloWorldLayerWithGCD.mm; sourceTree = "<group>"; };
 		6ECEB2D116EDFC19003297B7 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = Resources/Images; sourceTree = "<group>"; };
 		6ECEB33216EE17BC003297B7 /* LHCustomClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHCustomClasses.h; sourceTree = "<group>"; };
 		6ECEB33416EE17BC003297B7 /* LHMouseJointExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHMouseJointExt.h; sourceTree = "<group>"; };
@@ -727,6 +733,10 @@
 				322C8945168D8CB600F7C420 /* AppDelegate.mm */,
 				322C8947168D8CB600F7C420 /* HelloWorldLayer.h */,
 				322C8948168D8CB600F7C420 /* HelloWorldLayer.mm */,
+				562CEC181703A3230057207C /* HelloWorldLayerWithGCD.h */,
+				562CEC191703A3230057207C /* HelloWorldLayerWithGCD.mm */,
+				562CEC151703A2F30057207C /* MenuLayer.h */,
+				562CEC161703A2F30057207C /* MenuLayer.mm */,
 				322C894A168D8CB600F7C420 /* IntroLayer.h */,
 				322C894B168D8CB600F7C420 /* IntroLayer.mm */,
 				322C894D168D8CB600F7C420 /* GLES-Render.h */,
@@ -1681,6 +1691,8 @@
 				6ECEB38116EE17BC003297B7 /* LHSprite.mm in Sources */,
 				6ECEB38216EE17BC003297B7 /* LHTouchMgr.mm in Sources */,
 				6ECEB38316EE17BC003297B7 /* SHDocumentLoader.mm in Sources */,
+				562CEC171703A2F30057207C /* MenuLayer.mm in Sources */,
+				562CEC1A1703A3230057207C /* HelloWorldLayerWithGCD.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
