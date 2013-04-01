@@ -10,6 +10,7 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "SimpleAudioEngine.h"
+#import "MenuLayer.h"
 
 @interface HelloWorldLayerWithGCD()
 -(void) initPhysics;
@@ -30,6 +31,58 @@
 	
 	// return the scene
 	return scene;
+}
+
+-(id) init
+{
+	if( (self=[super init])) {
+		
+		// enable events
+
+		
+		// init physics
+		[self initPhysics];
+        
+        //        loader = [[LevelHelperLoader alloc] initWithContentOfFile:@"level04"];
+        //        loader = [[LevelHelperLoader alloc] initWithContentOfFile:@"level04" imgSubfolder:@"Images"];
+        
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, NULL), ^{
+            
+           
+            
+        loader = [[LevelHelperLoader alloc] initWithContentOfFile:@"level04"
+                                                     imgSubfolder:@"Images"
+                                                    decryptionKey:@"YourOwnPrivateKeyThatMustHave32C"];
+        
+        
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [loader addObjectsToWorld:world cocos2dLayer:self];
+            });
+                if([loader hasPhysicBoundaries])
+                    [loader createPhysicBoundaries:world];
+            
+                if(![loader isGravityZero])
+                    [loader createGravity:world];
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                [self retrieveRequiredObjects]; // Retrieve all objects after we’ve loaded the level.
+                [self setupCollisionHandling];
+                
+                [self startDebugDrawing];
+            });
+        
+        
+        });
+        [self setupAudio];
+        [self setupScore];
+        [self scheduleUpdate];
+
+        self.accelerometerEnabled = YES;
+        self.touchEnabled = YES;
+
+	}
+	return self;
 }
 
 
@@ -101,7 +154,12 @@
     CCMenuItem *item = [CCMenuItemFont itemWithString:@"Restart"
                                                target:self
                                              selector:@selector(restartGame)];
-    CCMenu *menu = [CCMenu menuWithItems:item, nil];
+    
+    
+    CCMenuItemLabel * menuL = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Main Menu" fontName:@"Marker Felt" fontSize:32] block:^(id sender) {
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[MenuLayer scene]]];
+    }];
+    CCMenu *menu = [CCMenu menuWithItems:item, menuL, nil];
     [menu alignItemsVertically];
     
     [self addChild:menu];
@@ -259,43 +317,7 @@
     [self addChild:scoreText z:20];
 }
 
--(id) init
-{
-	if( (self=[super init])) {
-		
-		// enable events
-		
-		self.touchEnabled = YES;
-		self.accelerometerEnabled = YES;
-		
-		// init physics
-		[self initPhysics];
-        
-        //        loader = [[LevelHelperLoader alloc] initWithContentOfFile:@"level04"];
-        //        loader = [[LevelHelperLoader alloc] initWithContentOfFile:@"level04" imgSubfolder:@"Images"];
-        loader = [[LevelHelperLoader alloc] initWithContentOfFile:@"level04"
-                                                     imgSubfolder:@"Images"
-                                                    decryptionKey:@"YourOwnPrivateKeyThatMustHave32C"];
-        
-        
-        [loader addObjectsToWorld:world cocos2dLayer:self];
-        
-        if([loader hasPhysicBoundaries])
-            [loader createPhysicBoundaries:world];
-        
-        if(![loader isGravityZero])
-            [loader createGravity:world];
-        
-        [self retrieveRequiredObjects]; // Retrieve all objects after we’ve loaded the level.
-        [self setupCollisionHandling];
-        [self setupAudio];
-        [self setupScore];
-        
-        [self startDebugDrawing];
-		[self scheduleUpdate];
-	}
-	return self;
-}
+
 
 -(void) spriteInParallaxHasReset:(LHSprite*)sprite
 {

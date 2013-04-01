@@ -12,6 +12,7 @@
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "SimpleAudioEngine.h"
+#import "MenuLayer.h"
 
 #pragma mark - HelloWorldLayer
 
@@ -105,7 +106,10 @@
     CCMenuItem *item = [CCMenuItemFont itemWithString:@"Restart"
                                                target:self
                                              selector:@selector(restartGame)];
-    CCMenu *menu = [CCMenu menuWithItems:item, nil];
+    CCMenuItemLabel * menuL = [CCMenuItemLabel itemWithLabel:[CCLabelTTF labelWithString:@"Main Menu" fontName:@"Marker Felt" fontSize:32] block:^(id sender) {
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1 scene:[MenuLayer scene]]];
+    }];
+    CCMenu *menu = [CCMenu menuWithItems:item, menuL, nil];
     [menu alignItemsVertically];
     
     [self addChild:menu];
