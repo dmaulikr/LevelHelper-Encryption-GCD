@@ -79,7 +79,9 @@ Results
 =======================================
 
 Results for this game are not really considerable I think since the images are not big enough however 
-the level with GCD runs slightly faster. Go ahead and try and let me know how it goes with you
+the level with GCD runs slightly faster. Go ahead and try and let me know how it goes with you.
+
+***Update:*** I have forgotten to mention that this method will particularly be faster if your device had multiple cores.
 
 
 I hope this helps some people.
