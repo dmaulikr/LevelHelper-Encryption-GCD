@@ -10,8 +10,6 @@
 	<false/>
 	<key>BundleIdentifier</key>
 	<string></string>
-	<key>CodePathRelative</key>
-	<string>..</string>
 	<key>CustomClasses</key>
 	<array/>
 	<key>CustomScreenSize</key>
@@ -23,22 +21,12 @@
 	<key>HDSuffix</key>
 	<string>-hd</string>
 	<key>LastLevelLoaded</key>
-	<string>/Users/bogdanvladu/Desktop/RocketMouseEncryptionScript/RocketMouse/Resources/Levels/level04.plhs</string>
+	<string></string>
 	<key>Orientation</key>
 	<integer>1</integer>
 	<key>ProjectName</key>
 	<string></string>
 	<key>Tags</key>
-	<array>
-		<string>DEFAULT</string>
-		<string>DOG</string>
-		<string>CAT</string>
-		<string>LASER</string>
-		<string>PLAYER</string>
-		<string>COIN</string>
-		<string>GROUND</string>
-		<string>ROTATING_LASERS</string>
-		<string>BUNNY</string>
-	</array>
+	<array/>
 </dict>
 </plist>
